@@ -63,6 +63,12 @@
             font-size: 15px;
         }
 
+        svg {
+            display: block;
+            /* Ensures the SVG behaves like a block element */
+            margin: 40px auto 0;
+        }
+
         #container {
             font-family: 'Noto Sans Mono';
             font-weight: bold;
@@ -75,22 +81,13 @@
             line-height: 90px;
             color: rgb(112, 41, 99);
         }
-
-
-
-        svg {
-            display: block;
-            /* Ensures the SVG behaves like a block element */
-            margin: auto;
-            /* Centers the SVG within its container */
-        }
     </style>
 </head>
 
 <body>
     <br><br>
     <h1>Assignment 4</h1>
-    <h2>Singapore Population Density</h2><br><br><br><br>
+    <h2>Singapore Population Density</h2>
     <svg width="1200" height="600"></svg>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <div id="tooltip" class="tooltip"></div>
@@ -152,7 +149,7 @@
                 .on("mouseout", () => tooltip.style("opacity", 0));
 
             let legend = svg.append("g")
-                .attr("transform", "translate(1020, 165");
+                .attr("transform", "translate(1020, 170)");
 
             legend.selectAll("rect")
                 .data(colorScale.range().map(color => {
